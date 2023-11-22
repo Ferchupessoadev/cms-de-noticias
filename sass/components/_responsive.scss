@@ -1,0 +1,121 @@
+@media only screen and (max-width: 1120px) {
+  .nav {
+    .nav__ul {
+      .nav__li {
+        .nav__li-a {
+          font-size: 17px;
+        }
+      }
+    }
+  }
+
+  .section-school {
+    z-index: 100;
+    .container-text {
+      p {
+        font-size: 30px;
+      }
+
+      h1 {
+        font-size: 35px;
+      }
+    }
+  }
+}
+
+@media only screen and (max-width: 900px) and (min-width: 700px) {
+  .nav__ul {
+    padding: 10px;
+    .nav__li a {
+      font-size: 12px;
+    }
+  }
+}
+
+@media only screen and (max-width: 950px) {
+  .section-school {
+    background: url("../../img/banner.jpg") no-repeat center center/cover;
+    .container-text {
+      background: none;
+    }
+  }
+
+  .nav {
+    display: none;
+  }
+
+  .div-incribirse {
+    display: none;
+  }
+
+  .nav-responsive {
+    display: flex;
+    .nav__h1-responsive {
+      position: absolute;
+      left: 20px;
+    }
+    .nav-responsive__nav-btn {
+      position: absolute;
+      color: white;
+      right: 20px;
+      font-size: 26px;
+      cursor: pointer;
+      i:nth-child(2) {
+        font-size: 30px;
+      }
+    }
+
+    .nav-responsive__nav-btn:active {
+      user-select: none;
+      background: none;
+      -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+    }
+
+    .nav__ul-responsive {
+      display: flex;
+      background: $color-school;
+      height: calc(100vh - 60px);
+      flex-direction: column;
+      justify-content: flex-start;
+      .nav__li-responsive {
+        z-index: 1000;
+        .nav__li-a-responsive {
+          padding: 20px;
+          width: 100%;
+          -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+        }
+      }
+    }
+  }
+}
+
+@media only screen and (max-width: 600px) {
+  .nav-responsive {
+    .nav__ul-responsive {
+      height: calc(100vh - 60px);
+      border-bottom: 1px solid black;
+    }
+  }
+}
+
+@media only screen and (max-width: 800px) {
+  .section-school {
+    .container-text {
+      p {
+        font-size: 25px;
+      }
+
+      h1 {
+        font-size: 25px;
+      }
+    }
+  }
+}
+
+@media only screen and (max-width: 340px) {
+  .nav-responsive {
+    .nav__h1-responsive {
+      font-size: 15px;
+    }
+  }
+}

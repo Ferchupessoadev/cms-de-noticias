@@ -1,0 +1,287 @@
+@charset "UTF-8";
+$primario: #fff;
+$color-pared: white;
+$font-title: "Oswald";
+$color-school: rgb(69, 6, 6);
+$box_shadow-cards: rgb(46, 3, 3);
+$font-text: "Times New Roman";
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Oswald";
+  color: white;
+  scroll-behavior: smooth;
+  -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+}
+
+body::-webkit-scrollbar {
+  width: 12px;
+}
+
+body::-webkit-scrollbar-track {
+  background: $color-school;
+}
+
+body::-webkit-scrollbar-thumb {
+  background: rgb(104, 34, 34);
+  border-radius: 10px;
+  border:1px solid $color-school;
+}
+
+@import "./components/nav.scss";
+@import "./components/nav-responsive.scss";
+@import "./components/presentation.scss";
+
+.widget {
+  position:fixed;
+  transform: translate(0,120px);
+  z-index:1000;
+  bottom:15px;
+  right: 15px;
+  width:60px;
+  height:60px;
+  border-radius: 100%;
+  background: rgb(33, 165, 19);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition:0.5s ease;
+  i {
+    color:#fff;
+    font-size:40px;
+  }
+}
+
+.widget-scroll-animation {
+  transform: translate(0,0)
+}
+
+
+/* diseño de la seccion de informacion de las tecnicaturas */
+@import "./components/fp.scss";
+@import "./components/cards.scss";
+@import './components/news.scss';
+.section-news {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    width: 90%;
+    min-height: 100vh;
+    padding:10px;
+    margin:auto;
+    gap:50px;
+    h5 {
+      font-size:40px;
+      text-align: center;
+      font-family: $font-title;
+    }
+
+    .container-flex {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      align-items: center;
+      width: 100%;
+      max-height: max-content;
+      gap:50px;
+      .card {
+        width: 300px;
+        height:300px;
+        .card__img-news {
+          width: 100%;
+          height: 200px;
+          background:rgba(0, 0, 0, .3);
+          object-fit: cover;
+        }
+        .card__p-title {
+          font-size:19px;
+        }
+        .card__p-time {
+          color:rgb(188, 188, 188);
+          font-size:12px;
+        }
+        .card__p-info {
+          height: 55px;
+          font-size:17px;
+          overflow: hidden;
+        }
+      }
+    }
+
+    &__a-info {
+      text-decoration: none;
+      padding:10px 30px;
+      width: max-content;
+      margin:20px auto;
+      background: rgba(255, 255, 255, 0.1);
+      transition: background 0.2s ease;
+    }
+
+    &__a-info:hover {
+      background:rgba(255, 255, 255, 0.4) ;
+    }
+}
+
+// responsive de las noticias.
+@media only screen and (max-width:650px) {
+    .section-news {
+      width: 100%;
+      .container-flex {
+        width: inherit;
+        .card {
+          width: inherit;
+        }
+      }
+    }
+}
+
+.card-one,
+.section-fp {
+  padding: 30px;
+  width: 100%;
+  height: max-content;
+  display: flex;
+  flex-direction: column;
+  background: $color-school;
+  .card__h1 {
+    color: whitesmoke;
+    margin: auto;
+    font-family: $font-title, sans-serif;
+    font-size: 40px;
+  }
+}
+
+.card-one {
+  text-align: center;
+  .card__p-subtitle {
+    font-size: 25px;
+  }
+}
+
+.section-basic-cycle {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap:10px;
+  width: 100%;
+  height:100vh;
+  position: relative;
+  background: url('../img/img-basic-cycle/img1.jpg') no-repeat center center/cover;
+  animation: cambiarImagen 20s infinite alternate ease;
+  .bg-color {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap:20px;
+    background: rgba(0, 0, 0, 0.4);
+    width: 100%;
+    height: 100%;
+    position:absolute;
+  }
+  &__h4 {
+    text-align: center;
+    font-size:70px;
+    position:relative;
+  }
+
+  &__div-age {
+    display: flex;
+    width: 100%;
+    align-items: center;
+    justify-content: center;
+    gap:20px;
+    position:relative;
+    .section-basic-cycle__p-age {
+      font-size: 40px;
+      font-family: monospace;
+      user-select: none;
+      background: rgba(0, 0, 0, 0.6);
+      padding:40px;
+      cursor:pointer;
+      background: rgba(0, 0, 0, .3);
+      -webkit-backdrop-filter: blur(2px);
+      backdrop-filter: blur(2px);
+      border: 1.5px solid rgba(0, 0, 0, 0.3);
+    }
+  }
+
+  &__h5 {
+    font-size:30px;
+    position:relative;
+    text-align: center;
+  }
+
+  &__p-info {
+    text-align: justify;
+    padding:10px;
+    width: 70%;
+    position:relative;
+    background: rgba(0, 0, 0, .3);
+    -webkit-backdrop-filter: blur(5px);
+    backdrop-filter: blur(5px);
+    border: 1.5px solid rgba(0, 0, 0, 0.3);
+  }
+}
+
+
+@media only screen and (max-width:980px) {
+  .section-basic-cycle__div-age {
+    flex-direction: column;
+  }
+}
+
+@media only screen and (max-width:500px) {
+  .section-basic-cycle {
+    &__p-info {
+      width: 70%;
+    }
+  }
+}
+
+@import "./components/responsive.scss";
+
+@keyframes aparecer {
+  0% {
+    opacity: 0.4;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+@keyframes rotate {
+  0% {
+    transform: rotate(0deg);
+  }
+
+  100% {
+    transform: rotate(-90deg);
+  }
+}
+
+
+@keyframes cambiarImagen {
+  0% {
+    background: url('../img/img-basic-cycle/img1.jpg') no-repeat center center/cover;
+  }
+
+  25% {
+    background: url('../img/img-basic-cycle/img2.jpg') no-repeat center center/cover;
+  }
+
+  50% {
+    background: url('../img/img-basic-cycle/img3.jpg') no-repeat center center/cover;
+  }
+
+  75% {
+    background: url('../img/img-basic-cycle/img4.jpg') no-repeat center center/cover;
+  }
+
+  100% {
+    background: url('../img/img-basic-cycle/img5.jpg') no-repeat center center/cover;
+  }
+}

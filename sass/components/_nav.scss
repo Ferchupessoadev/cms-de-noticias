@@ -1,0 +1,79 @@
+.nav {
+  position: absolute;
+  top: 0px;
+  width: 100%;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  background: transparent;
+  padding: 10px 15px;
+  height: 120px;
+  z-index: 1000;
+
+  img {
+    position: absolute;
+    left: 50px;
+    cursor: pointer;
+  }
+
+  .nav__ul {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    list-style: none;
+    margin-right: 0px;
+    position: absolute;
+    .nav__li {
+      .nav__li-a {
+        font-size: 20px;
+        padding: 20px 15px;
+        color: white;
+        text-decoration: none;
+        user-select: none;
+        display: flex;
+        gap: 5px;
+        transition: color 0.1s ease-in;
+        .arrow-rotate {
+          transform: translateY(2px) rotate(-90deg);
+        }
+      }
+      .events-ul {
+        display: none;
+        position: absolute;
+        flex-direction: column;
+        z-index: 20;
+        width: max-content;
+        height: max-content;
+        list-style: none;
+        background: rgb(116, 10, 10);
+        border: 1px solid black;
+        opacity: 0.4;
+        .events-ul__li {
+          z-index: 10000;
+          padding: 15px 20px;
+          border: 1px solid transparent;
+          .events-ul__li-a {
+            color: inherit;
+            padding: 15px 20px;
+            width: max-content;
+            text-decoration: none;
+          }
+        }
+      }
+      .events-ul__li:hover {
+        background: white;
+        color: $color-school;
+        border: 1px solid $color-school;
+      }
+    }
+
+    .nav__li:hover > .events-ul {
+      display: flex;
+    }
+
+    .nav__li:hover > .nav__li-a,
+    .nav__li:hover > .nav__li-a p {
+      color: rgb(131, 11, 11);
+    }
+  }
+}

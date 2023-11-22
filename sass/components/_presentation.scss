@@ -1,0 +1,50 @@
+.section-school {
+  width: 100%;
+  height: 100vh;
+  background-image: url("../img/welcome/section-school.jpg");
+  background-position-y: center;
+  background-position-x: center;
+  background-repeat: no-repeat;
+  .container-text {
+    background: rgba(0, 0, 0, 0.7);
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    text-align: center;
+    font-family: $font-title, serif;
+    font-weight: 600;
+    text-transform: uppercase;
+    h1 {
+      font-size: 50px;
+    }
+
+    p {
+      font-family: monospace;
+      font-size: 50px;
+      border-bottom: 1px solid white;
+    }
+  }
+}
+
+.div-incribirse {
+  position: absolute;
+  bottom: 50px;
+  margin: auto;
+  background: rgba(0, 0, 0, 0.7);
+  outline: none;
+  border: none;
+  border-radius: 9px;
+  cursor: pointer;
+  padding: 10px;
+  text-decoration: none;
+  p {
+    border: none !important;
+    transition: color 0.5s ease;
+  }
+}
+.div-incribirse:hover > p {
+  color: $color-school;
+}
