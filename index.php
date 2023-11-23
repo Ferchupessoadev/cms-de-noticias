@@ -32,7 +32,7 @@ if ($conn->connect_error) {
 	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 	<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+Indic+Siyaq+Numbers&family=Noto+Sans+Math&family=Oswald:wght@500&family=Roboto+Slab:wght@500&display=swap" rel="stylesheet">
 	<!-- CSS Custom -->
-	<link rel="stylesheet" href="./css/style.css">
+	<link rel="stylesheet" href="./sass/style.css">
 	<!-- Font Awesome -->
 	<script src="https://kit.fontawesome.com/f845b9182b.js" crossorigin="anonymous"></script>
 	<!-- libreria animate.css -->
@@ -42,42 +42,12 @@ if ($conn->connect_error) {
   	/>
 </head>
 <body class="body">
-	<!-- barra de navegación - escritorio -->
-	<nav class="nav">
-		<img style="width: 80px;height: 80px;" src="./icon-school.png" alt="">
-		<ul class="nav__ul">
-			<li class="nav__li"><a href="index.php" class="nav__li-a">Inicio</a></li>
-			<li class="nav__li"><a href="./public/fp.html" class="nav__li-a">Formación profesional</a></li>
-			<li class="nav__li nav__li-tecnicaturas">
-				<a class="nav__li-a" href="#">Tecnicaturas <p class="arrow-rotate">&#60</p></a>
-				<ul  class="events-ul">
-					<li class="events-ul__li"><a class="events-ul__li-a" href="./public/tecnicaturas/computacion.html">Computación</a></li>
-					<li class="events-ul__li"><a class="events-ul__li-a" href="./public/tecnicaturas/admDeEmpresas.html">Adm. de Empresas</a></li>
-					<li class="events-ul__li"><a class="events-ul__li-a" href="./public/tecnicaturas/gastronomia.html">Gastronomía</a></li>
-				</ul>
-			</li>
-			<li class="nav__li"><a href="#" class="nav__li-a">Contactanos</a></li>
-		</ul>
-	</nav>
-	<!-- barra de navegación - telefono -->
-		<nav class="nav-responsive">
-			<h1 class="nav__h1-responsive">E.E.T.N°2 "Independencia"</h1>
-			<div class="nav-responsive__nav-btn"><i class="fa-solid fa-bars"></i><i class="fa-solid fa-x btn-x-nav" style="font-family: monospace;"></i></div>
-			<ul class="nav__ul-responsive" id="navResponsive">
-				<li class="nav__li-responsive"><a href="index.html" class="nav__li-a-responsive">Inicio</a></li>
-				<li class="nav__li-responsive"><a href="./public/fp.html" class="nav__li-a-responsive">Formación profesional</a></li>
-				<li class="nav__li-responsive nav__li-tecnicaturas">
-					<a class="nav__li-a-responsive" href="#">Tecnicaturas <p class="arrow-rotate">&#60</p></a>
-				</li>
-				<li class="nav__li-responsive"><a href="./public/incripcion.html" class="nav__li-a-responsive">Incripción 2023</a></li>
-				<li class="nav__li-responsive"><a href="#" class="nav__li-a-responsive">Contactanos</a></li>
-			</ul>
-		</nav>
+	<?php require 'partials/header.php' ?>
 	<section class="section-school">
 		<div class="container-text">
 			<p>Bienvenidos</p>
 			<h1>Técnica N°2 "Independencia"</h1>
-			<a class="div-incribirse" href="./public/incripcion.html">
+			<a class="div-incribirse" id="inscripcion" href="./public/incripcion.html">
 				<p class="incribirse__button">Incripción</p>
 				<p>2023</p>
 			</a>
@@ -109,24 +79,6 @@ if ($conn->connect_error) {
 					}
 				} 
 			?>
-			<!-- <div class="card">
-				<img class="card__img-news" src="./img/slider/im-11.png" alt="">
-				<p class="card__p-title card__p-news">Nuevo!! vicerector</p>
-				<p class="card__p-time card__p-news">mayo 17,2023</p>
-				<p class="card__p-info card__p-news">tenemos un nuevo vicerector se llama luis fonsi.</p>
-			</div>
-			<div class="card">
-				<img class="card__img-news" src="./img/slider/im-11.png" alt="">
-				<p class="card__p-title card__p-news">Nuevo logo</p>
-				<p class="card__p-time card__p-news">septiembre 2,2023</p>
-				<p class="card__p-info card__p-news">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Optio maiores illo obcaecati omnis unde? Laudantium!</p>
-			</div>
-			<div class="card">
-				<img class="card__img-news" src="./img/slider/im-11.png" alt="">
-				<p class="card__p-title card__p-news">Nuevo logo</p>
-				<p class="card__p-time card__p-news">septiembre 2,2023</p>
-				<p class="card__p-info card__p-news">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Optio maiores illo obcaecati omnis unde? Laudantium!</p>
-			</div> -->
 		</div>
 		<a class="section-news__a-info" href="./public/news.html">+ Noticias</a>
 	</section>
@@ -189,21 +141,11 @@ if ($conn->connect_error) {
 	</div>
 </section>
 <footer>
-
+	<a href="./admin-news/login.html">Acceso Admin</a>
 </footer>
 	<script src="./js/main.js" type="module"></script>
 </body>
 </html>
 <?php
-// $sql = 'SELECT title,description,imagen FROM news';
-// $result = $conn->query($sql);
-// if ($result->num_rows > 0) {
-// 	// Recorrer los resultados
-// 	while($row = $result->fetch_assoc()) {
-// 		echo "title: " . $row["title"]. "description:" . $row["description"]. "<br>";
-// 		echo '<img src="data:image/jpeg;base64,' . base64_encode($row['imagen']) . '" alt="Imagen">';
-// 	}
-// } 
-// Cerraramos la conexión a la base de datos
 $conn->close();
 ?>
